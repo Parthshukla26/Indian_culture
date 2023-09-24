@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded 3D Model</title>
+</head>
+<body>
+    <div id="viewer"></div>
+
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
+        AFRAME.registerComponent('model', {
+            init: function () {
+                var el = this.el;
+                var modelUrl = "C:\Users\Parth Shukla\OneDrive\Desktop\sih project\Indian-Culture-main\cvjxb8n6buo0-tajmahal\tajmahal.3ds"; // Replace with the URL of your 3D model
+
+                // Set the 3D model source
+                el.setAttribute('gltf-model', modelUrl);
+
+                // You can customize the position, rotation, and scale of the model here if needed.
+                el.setAttribute('position', '0 0 -5');
+                el.setAttribute('rotation', '0 180 0');
+                el.setAttribute('scale', '1 1 1');
+            }
+        });
+    </script>
+</body>
+</html>
