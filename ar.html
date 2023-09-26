@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded 3D Model</title>
+    <title>3D Model Website</title>
+
+    <!-- Include the A-Frame and model-viewer libraries -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
 </head>
 <body>
-    <div id="viewer"></div>
+    <header>
+        <h1>Welcome to My 3D Model Website</h1>
+    </header>
 
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script>
-        AFRAME.registerComponent('model', {
-            init: function () {
-                var el = this.el;
-                var modelUrl = "C:\Users\Parth Shukla\OneDrive\Desktop\sih project\Indian-Culture-main\cvjxb8n6buo0-tajmahal\tajmahal.3ds"; // Replace with the URL of your 3D model
+    <main>
+        <!-- Embed a GLTF model -->
+        <model-viewer
+            src="./taj_mahal_3d_model/scene.gltf" <!-- Replace with the URL of your GLTF model -->
+            alt="A 3D model"
+            auto-rotate
+            camera-controls
+            style="width: 100%; height: 500px;" <!-- Adjust the dimensions as needed -->
+        ></model-viewer>
 
-                // Set the 3D model source
-                el.setAttribute('gltf-model', modelUrl);
+        <!-- Add more content here, such as text, images, or other HTML elements -->
+        <p>This is some additional content on your website.</p>
+    </main>
 
-                // You can customize the position, rotation, and scale of the model here if needed.
-                el.setAttribute('position', '0 0 -5');
-                el.setAttribute('rotation', '0 180 0');
-                el.setAttribute('scale', '1 1 1');
-            }
-        });
-    </script>
+    <footer>
+        <p>&copy; 2023 Your Website Name</p>
+    </footer>
 </body>
 </html>
